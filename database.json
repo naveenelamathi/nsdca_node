@@ -1,0 +1,35 @@
+{
+    "development": {
+      "driver": "pg",  
+      "host": "localhost",
+      "port": 5432,
+      "database": "postgres",
+      "user": "postgres",
+      "password": "postgres"
+    },
+    "test": {
+      "driver": "pg",
+      "host": "localhost",
+      "port": 5432,
+      "database": "postgres",
+      "user": "postgres",
+      "password": "postgres"
+    },
+    "production": {
+      "driver": "pg",
+      "host": "localhost",
+      "port": 5432,
+      "database": "postgres",
+      "user": "postgres",
+      "password": "postgres"
+    },
+    "dev": {
+    "driver": "pg",
+    "host": "localhost",
+    "database": "postgres",
+    "user": "postgres",
+    "password": "postgres",
+    "port": 5432
+  }
+  }
+  

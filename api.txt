@@ -1,0 +1,58 @@
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+
+// const app = express();
+// app.use(bodyParser.json());
+// app.use(cors());
+
+
+// app.post('/api/bookings', (req, res) => {
+//     const bookingData = req.body;
+
+//     // Process the bookingData here (e.g., save to a database)
+//     console.log('Received booking data:', bookingData);
+
+//     // You can add your logic to handle the booking, e.g., saving to a database
+//     // For this example, we'll just send a success response
+//     res.status(200).json({ message: 'Booking received successfully!' });
+// });
+
+// const PORT = process.env.PORT || 3001;
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
+
+
+// // const express = require('express');
+// // const app = express();
+// // const cors = require('cors');
+
+// // // Dummy data
+// // const properties = [
+// //   {
+// //     id: 1,
+// //     name: 'Ocean View Villa',
+// //     description: 'Beautiful villa with ocean views.',
+// //     price: 200,
+// //     address: '123 Ocean Drive',
+// //     imageUrl: 'https://example.com/villa.jpg'
+// //   },
+// //   {
+// //     id: 2,
+// //     name: 'Mountain Retreat',
+// //     description: 'Cozy cabin in the mountains.',
+// //     price: 150,
+// //     address: '456 Mountain Road',
+// //     imageUrl: 'https://example.com/cabin.jpg'
+// //   }
+// // ];
+
+// // app.use(cors());
+
+// // app.get('/property', (req, res) => {
+// //   res.json(properties);
+// // });
+
+// // const PORT = process.env.PORT || 3000;
+// // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
