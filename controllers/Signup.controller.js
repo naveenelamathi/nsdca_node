@@ -1,6 +1,6 @@
 const { Signup } = require('../models'); // Ensure this is correct
 const bcrypt = require('bcryptjs');
-console.log(Signup); 
+console.log(Signup,"signup"); 
 exports.signUp = async (req, res) => {
   const { email, password, name, mobile, userType, district } = req.body;
 

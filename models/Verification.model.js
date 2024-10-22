@@ -3,13 +3,13 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  class Student extends Model {
+  class Verification extends Model {
     static associate(models) {
-    
+      // Define associations here if needed
     }
   }
 
-  Student.init(
+  Verification.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -29,12 +29,12 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      createdAt: {
+      created_at: { // Use snake_case
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
-      updatedAt: {
+      updated_at: { // Use snake_case
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
@@ -42,12 +42,12 @@ module.exports = (sequelize) => {
     },
     {
       sequelize,
-      modelName: 'Students',
-      tableName: 'Students', // Make sure this matches the table name
-      timestamps: true, // Automatically handles createdAt and updatedAt
-      underscored: true, // Uses snake_case for the columns in the database
+      modelName: 'Verification',
+      tableName: 'verification', // Use the same name as in the migration
+      timestamps: true, // Enables Sequelize to automatically handle createdAt and updatedAt
+      underscored: true, // Ensures that Sequelize uses snake_case for columns
     }
   );
 
-  return Student;
+  return Verification;
 };
