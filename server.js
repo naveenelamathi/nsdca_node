@@ -5,12 +5,16 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 const db = require('./db');
-app.use(cors()); 
+// app.use(cors()); 
 app.use(bodyParser.json()); 
 const authController = require('./controllers/Signup.controller');
 const verifyController = require('./controllers/Online.controller');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../nsdca/build')));
+
+app.use(cors({
+  origin: 'https://nsdca-front-end-1.onrender.com', 
+}));
 
 
 
