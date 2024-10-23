@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/signup', authController.signUp);
+app.post('/sign', authController.signUp);
 app.post('/login',authController.login);
 app.post('/verify',verifyController.verify);
 app.post('/verification',verifyController.verification);
