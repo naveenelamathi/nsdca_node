@@ -35,7 +35,11 @@ app.get('*', (req, res) => {
 })
 
 const PORT = process.env.PORT || 3000;
+const BASE_URL = `https://nsdca-front-end.onrender.com`;
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}. Access it at ${BASE_URL}`);
 });
-
