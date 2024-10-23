@@ -12,13 +12,13 @@ const verifyController = require('./controllers/Online.controller');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../NSDCA/build')));
 
-// app.use(cors({
-//   origin: 'https://nsdca-front-end-1.onrender.com', 
-// }));
+app.use(cors({
+  origin: 'https://nsdca-front-end.onrender.com', 
+}));
 
-// app.get('/', (req, res) => {
-//   res.send('Simple API homepage');
-// })
+app.get('/', (req, res) => {
+  res.send('Simple API homepage');
+})
 
 
 app.post('/signup', authController.signUp);
