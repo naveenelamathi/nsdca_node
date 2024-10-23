@@ -26,13 +26,13 @@ app.post('/login',authController.login);
 app.post('/verify',verifyController.verify);
 app.post('/verification',verifyController.verification);
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../nsdca/build', 'index.html'), (err) => {
-//     if (err) {
-//       res.status(err.status).end();
-//     }
-//   });
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../nsdca/build', 'index.html'), (err) => {
+    if (err) {
+      res.status(err.status).end();
+    }
+  });
+})
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
