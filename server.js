@@ -16,6 +16,9 @@ app.use(cors({
   origin: 'https://nsdca-front-end-1.onrender.com', 
 }));
 
+app.get('/', (req, res) => {
+  res.send('Simple API homepage');
+})
 
 
 app.post('/signup', authController.signUp);
@@ -23,13 +26,13 @@ app.post('/login',authController.login);
 app.post('/verify',verifyController.verify);
 app.post('/verification',verifyController.verification);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../nsdca/build', 'index.html'), (err) => {
-    if (err) {
-      res.status(err.status).end();
-    }
-  });
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../nsdca/build', 'index.html'), (err) => {
+//     if (err) {
+//       res.status(err.status).end();
+//     }
+//   });
+// })
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
