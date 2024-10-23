@@ -4,13 +4,16 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
+const PORT = process.env.PORT || 3000;
 const db = require('./db');
 // app.use(cors()); 
 app.use(bodyParser.json()); 
 const authController = require('./controllers/Signup.controller');
 const verifyController = require('./controllers/Online.controller');
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../NSDCA/build')));
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, '../NSDCA/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
   origin: 'https://nsdca-front-end.onrender.com', 
@@ -26,20 +29,22 @@ app.post('/login',authController.login);
 app.post('/verify',verifyController.verify);
 app.post('/verification',verifyController.verification);
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../NSDCA/build', 'index.html'), (err) => {
+//     if (err) {
+//       res.status(err.status).end();
+//     }
+//   });
+// })
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../NSDCA/build', 'index.html'), (err) => {
-    if (err) {
-      res.status(err.status).end();
-    }
-  });
-})
-
-const PORT = process.env.PORT || 3000;
-const BASE_URL = `https://nsdca-front-end.onrender.com`;
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}. Access it at ${BASE_URL}`);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+// const PORT = process.env.PORT || 3000;
+// const BASE_URL = `https://nsdca-front-end.onrender.com`;
+// const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}. Access it at ${BASE_URL}`);
+// });
