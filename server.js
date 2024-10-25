@@ -22,10 +22,10 @@ app.use(cors({
 
 
 const sequelize = new Sequelize(process.env.DATABASE_URL,{
-  username: config.username,
-  password: config.password,
-  database: config.database,
-  host: config.host,
+  // username: config.username,
+  // password: config.password,
+  // database: config.database,
+  // host: config.host,
   dialect: 'sqlite',
   storage:"./database.sqlite",
   logging:false
@@ -39,7 +39,7 @@ console.log(" database created")
 .catch((err)=>{
   console.log(err)
   })
-  
+
 app.get('/', (req, res) => {
   res.send('Simple API homepage');
 })
