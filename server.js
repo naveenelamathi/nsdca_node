@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const app = express();
+const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 const db = require('./db');
@@ -19,6 +20,26 @@ app.use(cors({
   origin: 'https://nsdca-front-end.onrender.com', 
 }));
 
+
+const sequelize = new Sequelize(process.env.DATABASE_URL,{
+  username: config.username,
+  password: config.password,
+  database: config.database,
+  host: config.host,
+  dialect: 'sqlite',
+  storage:"./database.sqlite",
+  logging:false
+});
+
+sequelize
+.sync()
+.then(()=>{
+console.log(" database created")
+})
+.catch((err)=>{
+  console.log(err)
+  })
+  
 app.get('/', (req, res) => {
   res.send('Simple API homepage');
 })
