@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('./config/config.json')[process.env.NODE_ENV || 'development'];
+const config = require('./config/config.json')[process.env.DATABASE_URL || 'development'];
 
 const sequelize = new Sequelize({
   username: config.username,
