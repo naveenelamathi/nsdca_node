@@ -34,14 +34,19 @@ pool.connect((err) => {
   console.log('Connected to the database');
 });
 
-const sequelize = new Sequelize(process.env.DATABASE_URL,{
-  // username: config.username,
-  // password: config.password,
-  // database: config.database,
-  // host: config.host,
-  dialect: 'sqlite',
-  storage:"./database.sqlite",
-  logging:false
+// const sequelize = new Sequelize(process.env.DATABASE_URL,{
+//   // username: config.username,
+//   // password: config.password,
+//   // database: config.database,
+//   // host: config.host,
+//   dialect: 'sqlite',
+//   storage:"./database.sqlite",
+//   logging:false
+// });
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  logging: false,
 });
 
 sequelize
