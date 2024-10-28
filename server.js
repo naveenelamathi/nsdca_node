@@ -21,28 +21,8 @@ app.use(cors({
   origin: 'https://nsdca-front-end.onrender.com', 
 }));
 
-// const pool = new Pool({
-//   connectionString: process.env.DATABASE_URL,
-// });
 
-// Test database connection
-// pool.connect((err) => {
-//   if (err) {
-//     console.error('Database connection error:', err);
-//     return;
-//   }
-//   console.log('Connected to the database');
-// });
 
-// const sequelize = new Sequelize(process.env.DATABASE_URL,{
-//   // username: config.username,
-//   // password: config.password,
-//   // database: config.database,
-//   // host: config.host,
-//   dialect: 'sqlite',
-//   storage:"./database.sqlite",
-//   logging:false
-// });
 
 const sequelize = new Sequelize('postgress_9d88', 'postgress', 'I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu', {
   host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
