@@ -3,8 +3,18 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 require('dotenv').config();
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Set to true if you have valid SSL certificates
+    },
+  },
+})
 const { Pool } = require('pg');
 const PORT = process.env.PORT || 3000;
 const db = require('./db');
@@ -24,28 +34,28 @@ app.use(cors({
 
 
 
+// console.log('Connecting to database with URL:', process.env.DATABASE_URL);
 
+// const sequelize = new Sequelize(process.env.DATABASE_URL, {
+//   host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
+//   port: 5432,
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: {
+//       require: true, // This is for enforcing SSL
+//       rejectUnauthorized: false, // Change to true if you want to enforce certificate verification
+//     },
+//   },
+// });
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
-  port: 5432,
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true, // This is for enforcing SSL
-      rejectUnauthorized: false, // Change to true if you want to enforce certificate verification
-    },
-  },
-});
-
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-})();
+// (async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Connection has been established successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
+// })();
 
 
 app.get('/', (req, res) => {
