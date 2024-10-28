@@ -24,12 +24,16 @@ app.use(cors({
 
 
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
   dialect: 'postgres',
-  logging: false,
   dialectOptions: {
-    connectTimeout: 30000, // Set timeout to 30 seconds
+    ssl: {
+      require: true, // This is for enforcing SSL
+      rejectUnauthorized: false, // Change to true if you want to enforce certificate verification
+    },
   },
 });
 
