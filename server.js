@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
+const { Pool } = require('pg');
 const PORT = process.env.PORT || 3000;
 const db = require('./db');
 // app.use(cors()); 
@@ -20,6 +21,18 @@ app.use(cors({
   origin: 'https://nsdca-front-end.onrender.com', 
 }));
 
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+// Test database connection
+pool.connect((err) => {
+  if (err) {
+    console.error('Database connection error:', err);
+    return;
+  }
+  console.log('Connected to the database');
+});
 
 const sequelize = new Sequelize(process.env.DATABASE_URL,{
   // username: config.username,
