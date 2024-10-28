@@ -26,8 +26,11 @@ app.use(cors({
 
 const sequelize = new Sequelize('postgress_9d88', 'postgress', 'I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu', {
   host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
-  dialect: 'postgres', // Use 'postgres' as the dialect
+  dialect: 'postgres',
   logging: false,
+  dialectOptions: {
+    connectTimeout: 30000, // Set timeout to 30 seconds
+  },
 });
 
 sequelize
