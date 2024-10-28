@@ -24,7 +24,7 @@ app.use(cors({
 
 
 
-const sequelize = new Sequelize('postgress_9d88', 'postgress', 'I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu', {
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
   dialect: 'postgres',
   logging: false,
