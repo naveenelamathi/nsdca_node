@@ -45,7 +45,11 @@ pool.connect((err) => {
 // });
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres',
+  username: "postgress",
+    password: "I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
+    database: "postgress_9d88",
+    host: "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
+  dialect: 'postgress_9d88',
   logging: false,
 });
 
