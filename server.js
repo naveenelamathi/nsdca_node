@@ -28,6 +28,7 @@ app.use(cors({
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   host: 'dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com',
+  port: 5432,
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
@@ -37,14 +38,15 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   },
 });
 
-sequelize
-.sync()
-.then(()=>{
-console.log(" database created")
-})
-.catch((err)=>{
-  console.log(err)
-  })
+(async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+})();
+
 
 app.get('/', (req, res) => {
   res.send('Simple API homepage');
