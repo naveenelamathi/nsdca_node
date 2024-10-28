@@ -31,10 +31,11 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   port: 5432,
   dialect: 'postgres',
   dialectOptions: {
-    ssl: {
-      require: true, // This is for enforcing SSL
-      rejectUnauthorized: false, // Change to true if you want to enforce certificate verification
-    },
+    ssl: false,
+    // ssl: {
+    //   require: true, // This is for enforcing SSL
+    //   rejectUnauthorized: false, // Change to true if you want to enforce certificate verification
+    // },
   },
 });
 
