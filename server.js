@@ -16,7 +16,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   },
 })
 const { Pool } = require('pg');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const db = require('./db');
 // app.use(cors()); 
 app.use(bodyParser.json()); 
