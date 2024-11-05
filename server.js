@@ -6,16 +6,16 @@ const app = express();
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false, 
-    },
-  },
-})
-const { Pool } = require('pg');
+// const sequelize = new Sequelize(process.env.DATABASE_URL, {
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: {
+//       require: true,
+//       rejectUnauthorized: false, 
+//     },
+//   },
+// })
+// const { Pool } = require('pg');
 const PORT = process.env.PORT || 10000;
 const db = require('./db');
 app.use(bodyParser.json()); 
