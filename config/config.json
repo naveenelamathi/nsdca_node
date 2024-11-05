@@ -1,23 +1,23 @@
-{
-  "development": {
-    "username": "postgress",
-    "password": "I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
-    "database": "postgress_9d88",
-    "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "postgress",
-    "password": "I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
-    "database": "postgress_9d88",
-    "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
-    "dialect": "postgres"
-  },
-  "production": {
-    "username": "postgress",
-    "password": "2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
-    "database": "postgress_9d88",
-    "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
-    "dialect": "postgres"
-  }
-}
+// {
+//   "development": {
+//     "username": "postgress",
+//     "password": "I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
+//     "database": "postgress_9d88",
+//     "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
+//     "dialect": "postgres"
+//   },
+//   "test": {
+//     "username": "postgress",
+//     "password": "I2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
+//     "database": "postgress_9d88",
+//     "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
+//     "dialect": "postgres"
+//   },
+//   "production": {
+//     "username": "postgress",
+//     "password": "2Iwh2Yld8a7TK83vuIGu6Y0FmP91xHu",
+//     "database": "postgress_9d88",
+//     "host": "dpg-csfhnuggph6c73f35rmg-a.oregon-postgres.render.com",
+//     "dialect": "postgres"
+//   }
+// }
