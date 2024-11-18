@@ -1,0 +1,24 @@
+{
+    "app": {
+      "name": "My Node App",
+      "port": 3000,
+      "env": "development",
+      "logLevel": "debug"
+    },
+    "database": {
+      "host": "localhost",
+      "port": 5432,
+      "user": "dbuser",
+      "password": "dbpassword",
+      "database": "mydatabase"
+    },
+    "auth": {
+      "jwtSecret": "mySuperSecretKey",
+      "jwtExpiration": "1h"
+    },
+    "api": {
+      "baseUrl": "https://api.myapp.com",
+      "timeout": 5000
+    }
+  }
+  
