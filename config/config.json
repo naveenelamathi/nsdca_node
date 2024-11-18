@@ -1,24 +1,23 @@
 {
-    "app": {
-      "name": "My Node App",
-      "port": 3000,
-      "env": "development",
-      "logLevel": "debug"
-    },
-    "database": {
-      "host": "localhost",
-      "port": 5432,
-      "username": "dbuser",
-      "password": "dbpassword",
-      "database": "mydatabase"
-    },
-    "auth": {
-      "jwtSecret": "mySuperSecretKey",
-      "jwtExpiration": "1h"
-    },
-    "api": {
-      "baseUrl": "https://api.myapp.com",
-      "timeout": 5000
-    }
+  "development": {
+    "username": "devuser",
+    "password": "devpassword",
+    "database": "devdb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "produser",
+    "password": "prodpassword",
+    "database": "proddb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "testuser",
+    "password": "testpassword",
+    "database": "testdb",
+    "host": "localhost",
+    "dialect": "mysql"
   }
-  
+}
