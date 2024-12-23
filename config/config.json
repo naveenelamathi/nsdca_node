@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "devuser",
-    "password": "devpassword",
-    "database": "devdb",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "postgres",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
-    "username": "produser",
-    "password": "prodpassword",
-    "database": "proddb",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "postgres",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "testuser",
-    "password": "testpassword",
-    "database": "testdb",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "postgres",
     "host": "localhost",
     "dialect": "mysql"
   }

@@ -2,7 +2,7 @@ const { Signup } = require('../models'); // Ensure this is correct
 const bcrypt = require('bcryptjs');
 console.log(Signup,"signup"); 
 exports.signUp = async (req, res) => {
-  const { email, password, name, mobile, userType, district } = req.body;
+  const { email, password, name, mobile, userType,district } = req.body;
 
   try {
     const existingUser = await Signup.findOne({ where: { email } });
@@ -18,7 +18,8 @@ exports.signUp = async (req, res) => {
       name,
       mobile,
       userType,
-      district,
+      district
+     
     });
 
     return res.status(201).json({ message: 'User created successfully', user: newUser });

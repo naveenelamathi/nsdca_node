@@ -35,13 +35,13 @@ exports.verify = async (req, res) => {
 
   
 exports.verification = async (req, res) => {
-  const { student } = req.body;
+  const { serialNumber,studentRegNumber } = req.body;
 
   try {
       // Check if Certificate model is defined
       console.log('Certificate model:', Certificate); // Check this log
 
-      const existingUser = await Certificate.findOne({ where: { register_no: student } });
+      const existingUser = await Certificate.findOne({ where: { register_no:studentRegNumber,serial_no: serialNumber } });
 
       if (!existingUser) {
           return res.status(404).json({ message: 'User not found' });
